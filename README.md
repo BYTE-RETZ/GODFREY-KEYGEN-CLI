@@ -4,7 +4,7 @@
 
 **Godfrey Keygen** is a secure, offline password generation and management tool built with Python. 
 It combines cryptographic strength with a user-friendly GUI for everyday use — especially for those who want local control over their passwords.
-This version is built of tool is built for termux.
+This version is built of tool is built for **TERMUX**.
 
 ## Philosophy
 
@@ -38,10 +38,15 @@ On your terminal:
 ```bash
 pip install -r requirements.txt
 ```
-3.Run the python file in your termux.
+The cryptography module for Termux
+```bash
+apt install python-cryptography
 ```
+**Run the program**
+```bash
 python GODFREY_CLI.py
 ```
+
 
 Next it will ask to set a **Master-Key**
 Set any simple yet secure passsword.
