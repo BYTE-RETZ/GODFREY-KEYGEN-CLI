@@ -1,5 +1,9 @@
 import base64
+<<<<<<< HEAD
 import base58
+=======
+import base91
+>>>>>>> e1ce553 (Replaced base-58 encoding with base-91 encoding for more entropic password)
 from argon2.low_level import hash_secret_raw, Type
 from cryptography.fernet import Fernet, InvalidToken
 import os
@@ -151,8 +155,13 @@ def generate_password():
         )
         hex_hash = hashed.hex()
         reversed_hex = hex_hash[::-1]
+<<<<<<< HEAD
         b58_encoded = base58.b58encode(reversed_hex.encode()).decode()
         final_password = b58_encoded[::-1]
+=======
+        b91_encoded = base91.encode(reversed_hex.encode())  # base91.encode returns string
+        final_password = b91_encoded[::-1]
+>>>>>>> e1ce553 (Replaced base-58 encoding with base-91 encoding for more entropic password)
         print(f"GENERATED PASSWORD: {final_password}")
         store_password(word, salt, final_password, master_password_cache[0])
     except Exception as e:
@@ -217,4 +226,8 @@ def main_menu():
 
 if __name__ == "__main__":
     initialize_master()
+<<<<<<< HEAD
     main_menu() 
+=======
+    main_menu()
+>>>>>>> e1ce553 (Replaced base-58 encoding with base-91 encoding for more entropic password)
